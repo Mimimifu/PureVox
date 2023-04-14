@@ -1,18 +1,20 @@
 'use strict';
 
 class main {
+    constructor(){
+
+    }
+}
+
+class navCheck {
+
 
     constructor(){
 
     }
 
-}
-
-class navCheck {
-
-    //openai script
-
     navigation(){
+        //openai script 0.0.1
         if (/Edge\/\d./i.test(navigator.userAgent)) {
             console.log("Microsoft Edge - versão do ECMAScript 6+");
           } else if (/Chrome\/\d./i.test(navigator.userAgent)) {
@@ -27,4 +29,8 @@ class navCheck {
             console.log("Outros navegadores - versão desconhecida");
           }
     }
+}
+
+class protoTypes {
+    
 }
