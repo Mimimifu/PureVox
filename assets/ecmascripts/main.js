@@ -36,3 +36,5 @@ class navCheck {
 class protoTypes {
     
 }
+
+new main();
