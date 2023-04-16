@@ -38,3 +38,4 @@ class protoTypes {
 }
 
 new main();
+console.log('ue');
