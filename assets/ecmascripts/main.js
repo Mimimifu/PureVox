@@ -1,8 +1,10 @@
 'use strict';
 
 class main {
-    constructor(){
 
+
+    constructor(){
+      this._nav = new navCheck();
     }
 }
 
@@ -10,7 +12,7 @@ class navCheck {
 
 
     constructor(){
-
+      this.navigation();
     }
 
     navigation(){
