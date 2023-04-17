@@ -34,6 +34,17 @@ class navCheck {
 }
 
 class protoTypes {
+
+  test(obj,propertkey,data){
+    Object.defineProperty(obj.prototype, propertkey, {
+      get: name(){
+        return this.propertkey;
+      },
+      set: name(data){
+        this.propertkey = data;
+      }
+    })
+  }
     
 }
 
