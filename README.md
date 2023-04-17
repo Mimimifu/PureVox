@@ -1,6 +1,7 @@
 Readme
+
+<br>
 Objective
 
-* [ ] Mini Framework
-
-
+* [ ] Create Mini Framework
+* [ ] Fix Learn Languages 
