@@ -102,3 +102,17 @@ let b = new protoTypes(function(name = 'name'){return name},'opa');
 console.log(b);
 let c = new protoTypes(function(name = 'outro2'){ name},'outro2');
 console.log(c);
+
+
+// identify an element to observe
+const elementToObserve = document.querySelector("#mult");
+
+// create a new instance of `MutationObserver` named `observer`,
+// passing it a callback function
+const observer = new MutationObserver(() => {
+  console.log("callback that runs when observer is triggered");
+});
+
+// call `observe()` on that MutationObserver instance,
+// passing it the element to observe, and the options object
+observer.observe(elementToObserve, { subtree: true, childList: true });
