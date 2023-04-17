@@ -37,7 +37,7 @@ class utils {
 
       
     }
-    
+
     callback(mutationList, observer) {
       mutationList.forEach((mutation) => {
         switch (mutation.type) {
@@ -51,6 +51,14 @@ class utils {
                mutation.target.
                The attribute name is in mutation.attributeName, and
                its previous value is in mutation.oldValue. */
+               switch (mutation.attributeName) {
+                case "status":
+                  userStatusChanged(mutation.target.username, mutation.target.status);
+                  break;
+                case "username":
+                  usernameChanged(mutation.oldValue, mutation.target.username);
+                  break;
+              }
             break;
         }
       });
