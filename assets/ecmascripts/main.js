@@ -35,18 +35,35 @@ class navCheck {
 
 class protoTypes {
 
-  test(obj,propertkey,data){
+  
+
+  constructor(fn,propertkey){
+    let a = fn;
+    this.test(a,propertkey);
+    this.z(a)
+  }
+
+
+  z(a){
+    return a
+  }
+
+  test(obj,propertkey){
     Object.defineProperty(obj.prototype, propertkey, {
-      get: name(){
-        return this.propertkey;
+      get: function(){
+        return z[propertkey];
       },
-      set: name(data){
-        this.propertkey = data;
-      }
-    })
+      set: function(value){
+        z[propertkey] = value;
+      },
+    });
   }
     
 }
 
 new main();
 console.log('ue');
+let b = new protoTypes(function(name = 'name'){return name},'opa');
+console.log(b);
+let c = new protoTypes(function(name = 'outro2'){ name},'outro');
+console.log(c);
