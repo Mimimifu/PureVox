@@ -13,8 +13,8 @@ class utils {
 
 
     constructor(){
-      let v;
-      let k;
+      // let v;
+      // let k;
     }
 
     navigation(){
@@ -37,6 +37,12 @@ class utils {
     stateNow(){
       
       
+    }
+
+
+    getKey(k){
+      let local = new Storage();
+      return local.getItem(k);
     }
 
 
@@ -115,23 +121,30 @@ class protoTypes {
     
 }
 
-new main();
-console.log('ue');
-let b = new protoTypes(function(name = 'name'){return name},'opa');
-console.log(b);
-let c = new protoTypes(function(name = 'outro2'){ name},'outro2');
-console.log(c);
+// new main();
+// console.log('ue');
+// let b = new protoTypes(function(name = 'name'){return name},'opa');
+// console.log(b);
+// let c = new protoTypes(function(name = 'outro2'){ name},'outro2');
+// console.log(c);
 
 
-// identify an element to observe
-const elementToObserve = document.querySelector("body");
+// // identify an element to observe
+// const elementToObserve = document.querySelector("body");
 
-// create a new instance of `MutationObserver` named `observer`,
-// passing it a callback function
-const observer = new MutationObserver(() => {
-  console.log("callback that runs when observer is triggered");
-});
+// // create a new instance of `MutationObserver` named `observer`,
+// // passing it a callback function
+// const observer = new MutationObserver(() => {
+//   console.log("callback that runs when observer is triggered");
+// });
 
-// call `observe()` on that MutationObserver instance,
-// passing it the element to observe, and the options object
-observer.observe(elementToObserve, { subtree: true, childList: true });
+// // call `observe()` on that MutationObserver instance,
+// // passing it the element to observe, and the options object
+// observer.observe(elementToObserve, { subtree: true, childList: true });
+
+
+let a = new utils()
+a.setKeyValue('teste','teste');
+a.save();
+
+console.log(a.getKey('teste'));
