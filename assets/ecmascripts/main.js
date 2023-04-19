@@ -9,7 +9,8 @@ class main {
       u.title('Main');
       u.sel('h1').innerText = 'Title h1';
       console.log(u.sel('h1'));
-
+      u.sel('application-root');
+      console.log(u.sel('application-root'));
 
     }
 
@@ -19,9 +20,9 @@ class main {
 class utils {
 
 
-    constructor(){
+    // constructor(){
       
-    }
+    // }
 
     navigation(){
         //openai script 0.0.1
@@ -41,25 +42,24 @@ class utils {
     }
   
     title(t = 'Default'){
-      let title = document.querySelector('title');
-      title.innerText = t;
+      this.sel('title').changeText('t');
     }
 
-    sel(select){
-      return document.querySelector(select);
+    sel(selector){
+      return document.querySelector(selector);
     }
 
     selAll(select){
-      return document.querySelectorAll(select);
+      return document.querySelectorAll(selector);
     }
 
-    // changeText(text){
-    //   return this;
-    // }
+    changeText(selector,text){
+      this.sel(selector).innerText = text;
+    }
 
-    // changeHTML(html){
-    //   return this.innerHTML = html
-    // }
+    changeHTML(selector,html){
+      this.sel(selector).innerHTML = html
+    }
 
 }
 
