@@ -7,16 +7,20 @@ class main {
       let u = new utils();
       u.navigation();
       u.title('Main');
-      u.selElTag('h1').changeText('Title h1');
-      
+      u.sel('h1').innerText = 'Title h1';
+      console.log(u.sel('h1'));
+
+
     }
+
+
 }
 
 class utils {
 
 
     constructor(){
-
+      
     }
 
     navigation(){
@@ -41,18 +45,21 @@ class utils {
       title.innerText = t;
     }
 
-    selElTag(select){
+    sel(select){
       return document.querySelector(select);
     }
 
-    selElTagAll(select){
+    selAll(select){
       return document.querySelectorAll(select);
     }
 
-    changeText(text){
-      this.selElTag.innerText = text;
-    }
+    // changeText(text){
+    //   return this;
+    // }
 
+    // changeHTML(html){
+    //   return this.innerHTML = html
+    // }
 
 }
 
