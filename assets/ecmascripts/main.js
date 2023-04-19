@@ -6,6 +6,9 @@ class main {
     constructor(){
       let u = new utils();
       u.navigation();
+      u.title('Main');
+      u.selElTag('h1').changeText('Title h1');
+      
     }
 }
 
@@ -13,8 +16,7 @@ class utils {
 
 
     constructor(){
-      // let v;
-      // let k;
+
     }
 
     navigation(){
@@ -34,8 +36,26 @@ class utils {
           }
     }
   
+    title(t = 'Default'){
+      let title = document.querySelector('title');
+      title.innerText = t;
+    }
+
+    selElTag(select){
+      return document.querySelector(select);
+    }
+
+    selElTagAll(select){
+      return document.querySelectorAll(select);
+    }
+
+    changeText(text){
+      this.selElTag.innerText = text;
+    }
+
 
 }
 
 new main()
+
 
