@@ -7,9 +7,10 @@ class main {
       let u = new utils();
       u.navigation();
       u.title('Main');
-      u.sel('h1').innerText = 'Title h1';
+      u.changeText('h1','<h2>text</h2>')
       console.log(u.sel('h1'));
       u.sel('application-root');
+      
       console.log(u.sel('application-root'));
 
     }
@@ -49,16 +50,20 @@ class utils {
       return document.querySelector(selector);
     }
 
-    selAll(select){
+    selAll(selector){
       return document.querySelectorAll(selector);
     }
 
-    changeText(selector,text){
+    changeText(selector, text){
       this.sel(selector).innerText = text;
     }
 
-    changeHTML(selector,html){
-      this.sel(selector).innerHTML = html
+    changeHTML(selector, html){
+      this.sel(selector).innerHTML = html;
+    }
+
+    changeValue(selector, value){
+      this.sel(selector).value = value;
     }
 
 }
