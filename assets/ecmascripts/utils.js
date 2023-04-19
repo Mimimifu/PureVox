@@ -3,9 +3,9 @@
 class utils {
 
 
-    // constructor(){
-      
-    // }
+    constructor(){
+        
+    }
 
     navigation(){
         //openai script 0.0.1
@@ -58,6 +58,26 @@ class utils {
 
     changeValue(selector, value){
       this.sel(selector).value = value;
+    }
+
+    objectGlobal(){
+      if(globalThis === globalThis.globalThis){
+        return globalThis
+      } else
+      if(window === window.window){
+        return window
+      } else
+      if(self === self.self){
+        return self
+      } else
+      if(frames === frames.frames){
+        return frames
+      } else
+      if(global === global.global){
+        return global
+      } else {
+        throw new Error('Onde é que tô ? | Where am I? | Où suis-je? | どこに行けばいいですか? | doko ni ike ba ii desu ka ? | ここはどこですか。| koko wa doko desu ka . ')
+      }
     }
 
 }
