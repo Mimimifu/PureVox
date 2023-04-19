@@ -13,7 +13,8 @@ class utils {
 
 
     constructor(){
-
+      let v;
+      let k;
     }
 
     navigation(){
@@ -34,9 +35,27 @@ class utils {
     }
 
     stateNow(){
-
+      
       
     }
+
+
+    setKeyValue(k,v){
+
+      if(k && v){
+        this.k = k;
+        this.v = v;
+      }else{
+        throw new Error('Need key and value');
+      } 
+
+    }
+
+    save(){
+       let local = new Storage()
+       local.setItem(this.k,this.v);
+    }
+
 
     callback(mutationList, observer) {
       mutationList.forEach((mutation) => {
@@ -105,7 +124,7 @@ console.log(c);
 
 
 // identify an element to observe
-const elementToObserve = document.querySelector("#mult");
+const elementToObserve = document.querySelector("body");
 
 // create a new instance of `MutationObserver` named `observer`,
 // passing it a callback function
