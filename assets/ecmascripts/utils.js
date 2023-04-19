@@ -4,7 +4,7 @@ class utils {
 
 
     constructor(){
-        
+      
     }
 
     navigation(){
@@ -61,22 +61,28 @@ class utils {
     }
 
     objectGlobal(){
+      // reference https://developer.mozilla.org/en-US/docs/Glossary/Global_object
       if(globalThis === globalThis.globalThis){
+        console.log("globalThis - true (everywhere)");
         return globalThis
       } else
       if(window === window.window){
+        console.log("window - true (in a browser)");
         return window
       } else
       if(self === self.self){
+        console.log("self - true (in a browser or a Web Worker)");
         return self
       } else
       if(frames === frames.frames){
+        console.log("frames - true (in a browser)");
         return frames
       } else
       if(global === global.global){
+        console.log("global - true (in Node.js)");
         return global
       } else {
-        throw new Error('Onde é que tô ? | Where am I? | Où suis-je? | どこに行けばいいですか? | doko ni ike ba ii desu ka ? | ここはどこですか。| koko wa doko desu ka . ')
+        throw new Error('| Onde é que tô ? | Where am I? | Wo bin ich? | Où suis-je? | ここはどこですか。| koko wa doko desu ka . | Где я? | gde ya? | Де я? | day yo? | 제가 있는 곳은 어디입니까? | jega issneun goseun eodiipnikka? |我在哪裡？| wǒ zàinǎli? |');
       }
     }
 

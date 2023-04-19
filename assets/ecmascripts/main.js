@@ -6,6 +6,8 @@ class main {
 
     constructor(){
       let u = new utils();
+      let g = u.objectGlobal();
+      console.log(g);
       u.navigation();
       u.title('Main');
       u.changeText('h1','<h2>text</h2>');
@@ -14,7 +16,7 @@ class main {
       console.log(u.sel('application-root'));
       u.changeText('input[type=text]','test');
       console.log(u.sel('input[type=text]'));
-      console.log(u);
+      console.log(g.btoa('test'));
 
     }
 
