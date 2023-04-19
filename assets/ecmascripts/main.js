@@ -41,8 +41,8 @@ class utils {
           }
     }
   
-    title(t = 'Default'){
-      this.sel('title').changeText('t');
+    title(text = 'Default'){
+      this.sel('title').innerText = text;
     }
 
     sel(selector){
