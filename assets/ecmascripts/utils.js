@@ -2,9 +2,9 @@
 
 class utils {
 
-
+    
     constructor(){
-      
+      //const og = this.objectGlobal();
     }
 
     navigation(){
@@ -59,6 +59,22 @@ class utils {
     changeValue(selector, value){
       this.sel(selector).value = value;
     }
+
+    addAttibute(selector,nameAttribute,value){
+      this.sel(selector).setAttribute(nameAttribute, value);
+    }
+
+    delAttribute(selector,nameAttribute){
+      this.sel(selector).removeAttribute(nameAttribute);
+    }
+
+    addEvent(selector,typeEvent,fn){
+      this.sel(selector).addEventListener(typeEvent,fn);
+    }
+
+    // delEvent(selector,typeEvent,fn){
+    //   this.sel(selector).removeEventListener(typeEvent,fn,false);
+    // }
 
     objectGlobal(){
       // reference https://developer.mozilla.org/en-US/docs/Glossary/Global_object
