@@ -4,4 +4,7 @@ Readme
 Objective
 
 * [ ] Create Mini Framework
-* [ ] Fix Learn Languages 
+* [ ] Fix Learn Languages
+* [ ] Mutations and Observers
+* [ ] Ofuscation on Frontend
+
