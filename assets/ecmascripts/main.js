@@ -37,4 +37,5 @@ class utils {
 
 }
 
+new main()
 
