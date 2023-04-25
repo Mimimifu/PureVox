@@ -5,11 +5,15 @@ class utils {
 
 
     constructor(){
-      //const og = this.objectGlobal();
+      //let og = this.objectGlobal();
     }
 
     createEl(tag){
       return document.createElement(tag);
+    }
+
+    saveEl(el){
+      this.objectGlobal().document.body.append(el);
     }
   
     sel(selector){
@@ -163,7 +167,7 @@ class utils {
         }
     }
 
-    
+
 
 }
 

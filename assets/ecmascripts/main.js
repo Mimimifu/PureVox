@@ -6,12 +6,12 @@ class main {
 
     constructor(){
       let u = new utils();
-      let g = u.objectGlobal();
+      //let g = u.objectGlobal();
       
-      console.log(g);
+      //console.log(g);
       let el = u.createEl('input');
-      g.document.body.append(el);
-      console.log(g.document.documentElement.children.item('body'));
+      u.saveEl(el);
+      //console.log(g.document.documentElement.children.item('body'));
       u.addEvent('input','click',() =>{(confirm('ok')? console.log('ok'): console.log('cancel'))})
       u.navigation();
       u.title('Main');
@@ -21,7 +21,7 @@ class main {
       console.log(u.sel('application-root'));
       u.changeText('input[type=text]','test');
       console.log(u.sel('input[type=text]'));
-      console.log(g.btoa('test'));
+      //console.log(g.btoa('test'));
       console.log(Event.target);
 
 
