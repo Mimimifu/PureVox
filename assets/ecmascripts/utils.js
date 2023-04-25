@@ -67,7 +67,7 @@ class utils {
     addAttibute(selector,nameAttribute,value){
       this.sel(selector).setAttribute(nameAttribute, value);
     }
-
+    
     delAttribute(selector,nameAttribute){
       this.sel(selector).removeAttribute(nameAttribute);
     }

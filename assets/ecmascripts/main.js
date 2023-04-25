@@ -6,10 +6,11 @@ class main {
 
     constructor(){
       let u = new utils();
-      //let g = u.objectGlobal();
+      let g = u.objectGlobal();
       
-      //console.log(g);
+      console.log(g);
       let el = u.createEl('input');
+      el.setAttribute('name','hello world');
       u.saveEl(el);
       //console.log(g.document.documentElement.children.item('body'));
       u.addEvent('input','click',() =>{(confirm('ok')? console.log('ok'): console.log('cancel'))})
