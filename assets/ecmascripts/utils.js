@@ -15,6 +15,29 @@ class utils {
     saveEl(el){
       this.objectGlobal().document.body.append(el);
     }
+
+    autoSaveStorage(field, value, persintent = false){
+      let field = document.getElementById(`${(string === typeof(field) ? field : `undefined`)}`);
+
+      field.value = this.getStorageLocal(field,persintent);
+
+      field.addEventListener('change', function() {
+        this.addStorageLocal(field,value,persintent);
+      });
+
+    }
+
+    addStorageLocal(key,value, persintent = false){
+      if(persintent){
+        sessionStorage.setItem(key,value);
+      }else{
+        localStorage.setItem(key,value);
+      }
+    }
+
+    getStorageLocal(key, persintent = false){
+      return (persintent == false ? sessionStorage.getItem(key) : localStorage.getItem(key));
+    }
   
     sel(selector){
       return document.querySelector(selector);
@@ -57,7 +80,7 @@ class utils {
     }
 
     addClass(seletor,name){
-      this.sel(seletor).classList.add(...name);
+      this.sel(seletor).classList.add(...name);  
     }
 
     changeClass(seletor,name){

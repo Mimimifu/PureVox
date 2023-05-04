@@ -2,18 +2,21 @@
 
 import utils from "./utils.js";
 
-class pages {
+class pages  {
     constructor(page){
 
     }
 
     index(){
-        
-        return `
-        <h1>
-            test
-        </h1>
-        `;
+        let u = new utils();
+        u.title('Principal');
+        u.addHTML('application-root', `
+            <h1 class="custom">
+                content
+            </h1>
+        `);
+        u.addClass('h1',['test']);
+
     }
 }
 
