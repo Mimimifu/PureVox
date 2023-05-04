@@ -48,6 +48,10 @@ class utils {
       this.sel(selector).innerHTML = html;
     }
 
+    addHTML(selector, html){
+      this.sel(selector).innerHTML += html;
+    }
+
     changeValue(selector, value){
       this.sel(selector).value = value;
     }

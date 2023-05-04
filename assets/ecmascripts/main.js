@@ -1,12 +1,14 @@
 'use strict';
 
-import utils from './utils.js'
+import utils from './utils.js';
+import pages from './pages.js';
 
 class main {
 
     constructor(){
       let u = new utils();
       let g = u.objectGlobal();
+      let p = new pages();
       
       // console.log(g);
       // let el = u.createEl('input');
@@ -24,8 +26,15 @@ class main {
       // console.log(u.sel('input[type=text]'));
       // //console.log(g.btoa('test'));
       // console.log(Event.target);
+      u.title('Principal')
+      let header = '<pre>header</pre>';
+      let aside = '<pre>aside</pre>' +  `${p.index()}`;
+      let footer = '<pre>footer</pre>';
 
-
+      u.addHTML('application-root',`${header}`);
+      u.addHTML('application-root',`${aside}`);
+      u.addHTML('application-root',`${footer}`);
+      
     }
 
 
