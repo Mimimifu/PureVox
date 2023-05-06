@@ -17,12 +17,17 @@ class utils {
     }
 
     autoSaveStorage(field, value, persintent = false){
-      let field = document.getElementById(`${(string === typeof(field) ? field : `undefined`)}`);
+      let fields = document.getElementById(`${('string' == typeof(field) ? field : `undefined`)}`);
 
-      field.value = this.getStorageLocal(field,persintent);
-
-      field.addEventListener('change', function() {
-        this.addStorageLocal(field,value,persintent);
+      fields.value = this.getStorageLocal(field,persintent);
+      console.log(fields.value)
+      this.addStorageLocal(field,value,persintent);
+      fields.addEventListener('change', function(persintent,field,value) {
+        if(persintent){
+          sessionStorage.setItem(field,value);
+        }else{
+          localStorage.setItem(field,value);
+        }     
       });
 
     }
@@ -36,7 +41,7 @@ class utils {
     }
 
     getStorageLocal(key, persintent = false){
-      return (persintent == false ? sessionStorage.getItem(key) : localStorage.getItem(key));
+      return (persintent == true ? sessionStorage.getItem(key) : localStorage.getItem(key));
     }
   
     sel(selector){

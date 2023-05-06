@@ -26,15 +26,15 @@ class main {
       // console.log(u.sel('input[type=text]'));
       // //console.log(g.btoa('test'));
       // console.log(Event.target);
-      u.title('Principal')
-      let header = '<pre>header</pre>';
-      let aside = '<pre>aside</pre>';
-      let footer = '<pre>footer</pre>';
+      // u.title('Principal')
+      // let header = '<pre>header</pre>';
+      // let aside = '<pre>aside</pre>';
+      // let footer = '<pre>footer</pre>';
 
-      u.addHTML('application-root',`${header}`);
-      u.addHTML('application-root',`${aside}`);
+      // u.addHTML('application-root',`${header}`);
+      // u.addHTML('application-root',`${aside}`);
       u.addHTML('application-root',`${p.index()}`);
-      u.addHTML('application-root',`${footer}`);
+      // u.addHTML('application-root',`${footer}`);
       
     }
 
