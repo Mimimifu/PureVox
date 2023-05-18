@@ -6,6 +6,8 @@ class pages {
     constructor(page){
 
     }
+    
+
 
     header(){
         let u = new utils();
@@ -28,7 +30,7 @@ class pages {
         u.addHTML('application-root',
         `
         <footer>
-            ${Date()} Copyright. All Rights Reserved.
+            ${JSON.stringify(Date()).split(' ')[3]}© Copyright. All Rights Reserved.
         </footer>
 
         `);
@@ -48,6 +50,20 @@ class pages {
         u.autoSaveStorage('test','content',true);
         this.footer();
         return ' '
+    }
+
+    profile(){
+        let u = new utils();
+        u.title('Profile');
+        this.header();
+        u.addHTML('application-root', `
+            <h1 class="custom" id='test'>
+                ${u.getStorageLocal('profile',true)}
+            </h1>
+        `);
+        u.addClass('h1',['test']);
+        u.autoSaveStorage('profile','content',true);
+        this.footer();
     }
 }
 
