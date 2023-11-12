@@ -40,6 +40,14 @@ class utils {
       }
     }
 
+    getReload(){
+      if(this.getStorageLocal('reload') === true){
+        continue;
+      }else{
+        window.reload()
+      }
+    }
+
     getStorageLocal(key, persintent = false){
       return (persintent == true ? sessionStorage.getItem(key) : localStorage.getItem(key));
     }
