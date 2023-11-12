@@ -44,7 +44,7 @@ class utils {
       if(this.getStorageLocal('reload') === true){
         console.log(this.getStorageLocal('reload'));
       }else{
-        addStorageLocal("reload",true, persintent = false);
+        this.addStorageLocal("reload",true, persintent = false);
         window.reload();
       }
     }
