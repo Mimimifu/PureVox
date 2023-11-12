@@ -41,11 +41,11 @@ class utils {
     }
 
     getReload(){
-      if(this.getStorageLocal('reload') === true){
-        console.log(this.getStorageLocal('reload'));
-      }else{
-        this.addStorageLocal("reload",true, persintent = false);
+      if(this.getStorageLocal('reload') !== true){
+        this.addStorageLocal("reload",true, false);
         window.reload();
+      }else{
+        console.log(this.getStorageLocal('reload'));
       }
     }
 
