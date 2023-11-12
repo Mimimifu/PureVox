@@ -42,9 +42,10 @@ class utils {
 
     getReload(){
       if(this.getStorageLocal('reload') === true){
-        continue;
+        console.log(this.getStorageLocal('reload'));
       }else{
-        window.reload()
+        addStorageLocal("reload",true, persintent = false);
+        window.reload();
       }
     }
 
