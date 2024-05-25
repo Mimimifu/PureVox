@@ -6,6 +6,7 @@ import pages from './pages.js';
 class main {
 
     constructor(){
+      let timereload = 60;
       let u = new utils();
       let g = u.objectGlobal();
       let p = new pages();
@@ -35,10 +36,16 @@ class main {
       // u.addHTML('application-root',`${aside}`);
       u.addHTML('application-root',`${p.index()}`);
       // u.addHTML('application-root',`${footer}`);
-      if(this){
-        this.preventDefault();
-        g.location.reload();
-      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+         let count;
+         (u.getStorageLocal('autoreload') !== undefined ?  count = u.getStorageLocal('autoreload'): count = 0);
+         u.autoSaveStorage('autoreload',`${count + 1}` ,true);
+         (u.getStorageLocal('autoreload') == 0 ? g.location.reload() : setTimeout(() => { g.location.reload()}, 60000) );
+         return false;
+        });
+      
+      
 
 
     }
