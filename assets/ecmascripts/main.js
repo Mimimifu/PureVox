@@ -35,7 +35,8 @@ class main {
       // u.addHTML('application-root',`${aside}`);
       u.addHTML('application-root',`${p.index()}`);
       // u.addHTML('application-root',`${footer}`);
-      u.getReload();
+      g.location.reload();
+
     }
 
 
