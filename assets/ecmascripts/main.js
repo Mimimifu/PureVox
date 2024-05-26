@@ -38,7 +38,7 @@ class main {
       // u.addHTML('application-root',`${footer}`);
 
       document.addEventListener("DOMContentLoaded", () => {
-         let count;
+         let count = 0;
          (u.getStorageLocal('autoreload') == undefined ? count = 0 : count = u.getStorageLocal('autoreload'));
           u.addStorageLocal('autoreload',`${count + 1}` ,true);
          (u.getStorageLocal('autoreload') == 0 ? g.location.reload() : setTimeout(() => { g.location.reload()}, 60000) );
