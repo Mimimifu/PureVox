@@ -39,7 +39,7 @@ class main {
 
       document.addEventListener("DOMContentLoaded", () => {
          let count;
-         (u.getStorageLocal('autoreload') !== undefined ?  count = u.getStorageLocal('autoreload'): count = 0);
+         (u.getStorageLocal('autoreload') == undefined ?  count = u.getStorageLocal('autoreload'): count = 0);
           u.addStorageLocal('autoreload',`${count + 1}` ,true);
          (u.getStorageLocal('autoreload') == 0 ? g.location.reload() : setTimeout(() => { g.location.reload()}, 60000) );
          return false;
